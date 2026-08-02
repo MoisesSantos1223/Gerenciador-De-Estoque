@@ -1,5 +1,5 @@
 import tkinter as tk
-import logica_produtos as logica
+import GerenciadorDeEstoqueTK.logica_produtos as logica
 
 produtos = []
 
