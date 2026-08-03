@@ -38,7 +38,16 @@ def remover_produt_tekinter():
         campo_remover.delete(0, tk.END)
 
     print(logica.produtos)
+    
+def atualizar_tabela():
+    for linha in tabela_produto.get_children():
+        tabela_produto.delete(linha)
+        
 
+tabela_produto = tk.Treeview(
+    janela,
+    colun
+)
 
 janela = tk.Tk()
 
