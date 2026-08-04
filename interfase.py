@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 import logica_produtos as logica
 
 produtos = []
@@ -21,7 +22,7 @@ def cadastro_produtos_tekinter():
     campo_preco.delete(0, tk.END)
     campo_quantidade.delete(0, tk.END)
 
-    print(logica.produtos)
+    atualizar_tabela()
 
 def remover_produt_tekinter():
     nome_remover = campo_remover.get()
@@ -30,27 +31,32 @@ def remover_produt_tekinter():
         nome_remover
     )
 
-    if removido == True:
-        mensagem.config(text="Produto removido com sucesso!")
+    if removido:
+        mensagem.config(
+            text="Produto removido com sucesso"
+        )
     else:
-        mensagem.config(text="Produto não encontrado!")
+        mensagem.config(
+            text="Produto não encontrado"
+        )
 
-        campo_remover.delete(0, tk.END)
+    campo_remover.delete(0, tk.END)
+    atualizar_tabela()
 
-    print(logica.produtos)
+   
     
 def atualizar_tabela():
     for linha in tabela_produto.get_children():
         tabela_produto.delete(linha)
 
-        for produto in logica.produtos:
-            tabela_produto.insert(
-                "",
-                "end",
-                values=(
-                    produto["nome"]
-                    produto["preco"]
-                    produto["quantidade"]
+    for produto in logica.produtos:
+        tabela_produto.insert(
+            "",
+            "end",
+            values=(
+                produto["nome"],
+                produto["preco"],
+                produto["quantidade"]
                 )
             )
 
@@ -120,6 +126,17 @@ botão_remover = tk.Button(
 )
 botão_remover.pack()
 
+#Tabela de Produto
+tabela_produto = ttk.Treeview(
+    janela,
+    columns=("nome", "preco", "quantidade"),
+    show="headings"
+)
 
+tabela_produto.heading("nome", text="Nome")
+tabela_produto.heading("preco", text="Preço")
+tabela_produto.heading("quantidade", text="Quantidade")
+tabela_produto.pack()
 
+atualizar_tabela()
 janela.mainloop()

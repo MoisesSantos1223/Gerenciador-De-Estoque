@@ -42,18 +42,12 @@ def cadastrar_produto(produtos,nome, preco, quantidade):
     produtos.append(produto4)
 
 def remover_produto(produtos, nome_remover):
-    encontrado = False
-
     for produto in produtos:
-        if produto['nome'] == nome_remover:
+        if produto["nome"].strip().lower() == nome_remover.strip().lower():
             produtos.remove(produto)
-            encontrado = True
-            print("Produto removido com sucesso!")
-            break
-    
-    if encontrado == False:
-        print("Não foi encontrado esse nome!")
-
+            return True
+    return False
+     
 def buscar_produto(produtos, nome_busca):
     encontrado = False
   
