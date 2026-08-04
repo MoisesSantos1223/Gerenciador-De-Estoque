@@ -16,23 +16,19 @@ No meu porjeto pode cadastrar o nome do projeto, preço e a quantidade, e a fun�
 ## Tela do Projeto
 
 <p align="center">
-    <img src="./assets/tela-inicial.png" alt="Tela inicial do Gerenciador de Estoque" width="900">
-</p>
-
-<p align="center">
-    <strong>Tela inicial do sistema</strong>
+    <img src="./assets/tela-inicial-560.png"
+         alt="Tela Inicial do Gerenciador de Estoque">
 </p>
 
 ## Cadastro de Produto
 
 <p align="center">
-    <img src="./assets/busca-produto.png"
-         alt="Busca de Produtos"
-         width="650">
+    <img src="./assets/cadastro-produto-620.png"
+         alt="Tela de Cadastro de Produtos">
 </p>
 
 <p align="center">
-    <em>Tela de busca de produtos cadastrados.</em>
+    <em>Tela responsável pelo cadastro de novos produtos.</em>
 </p>
 
 ## Explicação
