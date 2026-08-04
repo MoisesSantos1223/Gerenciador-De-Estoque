@@ -48,18 +48,7 @@ def remover_produto(produtos, nome_remover):
             return True
     return False
      
-def buscar_produto(produtos, nome_busca):
-    encontrado = False
-  
-
-    for produto in produtos:
-        if produto['nome'] == nome_busca:
-            print(f"Produto {produto['nome']} foi encontrado")
-            encontrado = True
-            break
-
-    if encontrado == False:
-        print(f"O produto {nome_busca} não foi encontrado")
+#Essa é a parte do menu, onde vai rodar no terminal
 '''''
 def menu(produtos):
      print("MENU ")
